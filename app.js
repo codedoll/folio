@@ -1,13 +1,25 @@
-var express = require('express');
-var app = express();
-var    path = require('path');
+var app = angular.module('Folio', []);
 
-app.use(express.static('public'));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.resolve(__dirname + '/pindex.html'));
-});
+app.controller('MainController', ['$http', '$scope', '$routeParams', '$route', 'ngDialog', function($http, $scope, $routeParams, $route, ngDialog) {
 
-app.listen(5000, function () {
-  console.log('Example app listening on port 5000!');
-});
+    var self = this;
+
+
+    $scope.adminLoad = function() {
+
+        $http({
+            url: '/clothing',
+            method: 'GET',
+        }).then(function(clothingDbData) {
+
+            $scope.dataLoaded = true;
+
+            console.log(clothingDbData.data);
+            self.clothingDbData = clothingDbData.data;
+        });
+        //END adminLoad function
+    };
+
+
+}]); // end MainController
