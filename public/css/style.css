@@ -784,7 +784,7 @@ header {
 /*http://codepen.io/Paulie-D/pen/fnIxt/*/
 
 .divhero {
-    height: 500px;
+    height: 40em;
     background-image: url(../images/workspace.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -798,13 +798,11 @@ header {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
-    /* height: 45%; */
     bottom: 0;
     display: block;
-    /*position: absolute;*/
     background-color: rgba(57, 66, 64, 0.67);
     color: #fff;
-    padding: 1em;
+    padding: .1em;
     margin-bottom: 6em;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
