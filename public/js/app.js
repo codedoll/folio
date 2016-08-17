@@ -1,4 +1,4 @@
-var app = angular.module('Folio', ['ngRoute', 'ngSanitize']);
+var app = angular.module('Folio', ['ngRoute', 'ngSanitize', 'angularMoment']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
