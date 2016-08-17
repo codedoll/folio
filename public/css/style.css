@@ -916,10 +916,17 @@ header {
 .blogurl {
     text-align: center;
     font-family: 'Varela Round', sans-serif;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
+    color: #7a7a7a;
+    margin-top: -2em;
+    font-size: 1em;
 }
 
 .post_item_block a:link, a:visited { 
     color: #394240;
     text-decoration: none;
 } 
+
+.subtitle {
+
+}

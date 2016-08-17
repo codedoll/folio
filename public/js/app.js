@@ -1,17 +1,31 @@
-var app = angular.module('Folio', []);
+var app = angular.module('Folio', ['ngRoute', 'ngSanitize']);
 
-app.controller('MainController', ['$http', '$scope', '$routeParams', '$route', 'ngDialog', function($http, $scope, $routeParams, $route, ngDialog) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+
+    $routeProvider.when('/', {
+        templateUrl: 'index.html',
+        controller: 'MainController',
+        controllerAs: 'mctrl'
+    })
+}])
+
+
+app.controller('MainController', ['$http', '$scope', '$routeParams', '$route', '$sce', function($http, $scope, $routeParams, $route, $sce) {
 
     var self = this;
+    console.log('message');
 
-    // $scope.adminLoad = function() {
-
+    //Gets the json from blog
         $http({
-            url: '/',
-            method: 'GET',
-        }).then(function(data) {
-            console.log(data);
+        method: 'GET',
+        url: '/1'
+        }).then(function(posts) {
+            $scope.Message = "My name is <span><b>Lyn Dee</b></span>";
+            self.posts = posts.data.posts;
         });
-
 
 }]); // end MainController

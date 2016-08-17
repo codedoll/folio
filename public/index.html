@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Folio">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Lyn Dee</title><!-- CSS -->
@@ -21,8 +21,11 @@
     <script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src=
     "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="js/superfish.min.js" type="text/javascript"></script>
     <script src="js/animate.js" type="text/javascript"></script>
     <script src="js/myscript.js" type="text/javascript"></script>
@@ -35,7 +38,7 @@
     </script>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
-<body>
+<body ng-controller="MainController as mctrl">
 
         <!-- HEADER -->
         <header>
@@ -275,71 +278,21 @@
             <div class="container">
                 <div>
                     <h1 class="sectiontitle bgblack personal twoem">Blog</h1>
-                    <h5 class="blogurl">Visit the blog at <a href="http://codedoll.com">codedoll.com</a></h5>
+                    <h5 class="blogurl">Powered by Node.js. Visit the blog at <a href="http://codedoll.com">codedoll.com.</a></h5>
                 </div><!-- RECENT POSTS -->
-                <div class="row recent_posts" data-animated="fadeInUp" data-appear-top-offset="-200">
-                    <div class="col-lg-4 col-md-4 col-sm-4 padding-bottom-30 post_item_block">
-                        <a class="blogposttitle" href="http://codedoll.com/meetup-clone-rails/">Learning Rails</a>
-                        <div class="post_item">
-                            <div class="post_item_img">
-                                <img class="blogimg" alt=" " src="http://codedoll.com/wp-content/uploads/2016/08/Rails-Meetup-Clone-768x401.png"> <a class=
-                                "link" href="http://codedoll.com/meetup-clone-rails/"></a>
-                            </div>
-                            <div class="post_item_content">
-                                <div class="blog_content">
-                                    We are in our last week, and currently finishing our final project/s in GA. I decided to make my Ruby
-                                    on Rails project a meetup clone.
-                                </div><a href="http://codedoll.com/meetup-clone-rails/">Read more...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 padding-bottom-30 post_item_block">
-                        <a class="blogposttitle" href="http://codedoll.com/google-api-nodejs-google-embed-api/">Google API for Nodejs and
-                                Google Embed API</a>
-                        <div class="post_item">
-                            <div class="post_item_img">
-                                <img class="blogimg" alt=" " src=
-                                "http://codedoll.com/wp-content/uploads/2016/07/Google-Analytics-API-with-OAuth2.0-600x434.png"> <a class=
-                                "link" href="http://codedoll.com/google-api-nodejs-google-embed-api/"></a>
-                            </div>
-                            <div class="post_item_content">
+   
 
-                                <div class="blog_content">
-                                    We are in our last week, and currently finishing our final project/s in GA. I decided to make my Ruby
-                                    on Rails project a meetup clone.
-                                </div><a href="http://codedoll.com/google-api-nodejs-google-embed-api/">Read more...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 padding-bottom-30 post_item_block">
-                        <a class="blogposttitle" href="http://codedoll.com/unit-3-project-week/">Unit 3 project week, it's more about collaboration</a>
-
+                    <div class="col-lg-4 col-md-4 col-sm-4 post_item_block" ng-repeat="posts in mctrl.posts | limitTo: 6">
+                        <!-- <a class="blogposttitle" href="http://codedoll.com/unit-3-project-week/">AngularJS : Love and hate</a> -->
+                        <h3><span ng-bind-html="posts.title"></span></h3>
                         <div class="post_item">
                             <div class="post_item_img">
-                                <img class="blogimg" alt=" " src="http://codedoll.com/wp-content/uploads/2016/07/no-sleep-project-week-600x392.png">
+                                <img class="blogimg" alt=" " src="{{posts.thumbnail}}">
                                 <a class="link" href="http://codedoll.com/unit-3-project-week/"></a>
                             </div>
                             <div class="post_item_content">
                                 <div class="blog_content">
-                                    We are in our last week, and currently finishing our final project/s in GA. I decided to make my Ruby
-                                    on Rails project a meetup clone.
-                                </div><a href="http://codedoll.com/unit-3-project-week/">Read more...</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 padding-bottom-30 post_item_block">
-                            <a class="blogposttitle" href="http://codedoll.com/unit-3-project-week/">AngularJS : Love and hate</a>
-
-                        <div class="post_item">
-                            <div class="post_item_img">
-                                <img class="blogimg" alt=" " src="http://codedoll.com/wp-content/uploads/2016/07/Angular-does-what-for-me.png">
-                                <a class="link" href="http://codedoll.com/unit-3-project-week/"></a>
-                            </div>
-                            <div class="post_item_content">
-                                <div class="blog_content">
-                                   It's stupid to feel this way, but I feel indignant that Angular does so much for me, in exchange of a load of gobbledygook.
-                                </div><a href="http://codedoll.com/angularjs-love-hate/">Read more...</a>
+                             <span ng-bind-html="posts.excerpt"></span>
                             </div>
                         </div>
                     </div>
