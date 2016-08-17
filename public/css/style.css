@@ -920,8 +920,13 @@ header {
     font-size: .8em;
 }
 
-.post_item_block a:link, a:visited { 
+.post_item_block a:link { 
     color: #45aab8;
+    text-decoration: none;
+} 
+
+.post_item_block a:visited { 
+    color: #1d737f;
     text-decoration: none;
 } 
 
