@@ -24,7 +24,7 @@ app.controller('MainController', ['$http', '$scope', '$routeParams', '$route', '
         method: 'GET',
         url: '/1'
         }).then(function(posts) {
-            $scope.Message = "My name is <span><b>Lyn Dee</b></span>";
+            // console.log(posts.data.posts);    
             self.posts = posts.data.posts;
         });
 
