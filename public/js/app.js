@@ -17,12 +17,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 app.controller('MainController', ['$http', '$scope', '$routeParams', '$route', '$sce', function($http, $scope, $routeParams, $route, $sce) {
 
     var self = this;
-    console.log('message');
+    // console.log('message');
 
     //Gets the json from blog
         $http({
         method: 'GET',
-        url: '/1'
+        url: '/blog'
         }).then(function(posts) {
             // console.log(posts.data.posts);    
             self.posts = posts.data.posts;

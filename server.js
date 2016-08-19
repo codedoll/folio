@@ -10,14 +10,14 @@ var request = require('request');
 app.use(express.static('public'));
 
 
-app.get('/1', function(req, res){
+app.get('/blog', function(req, res){
 		request({
 		    url: 'http://codedoll.com/api/get_recent_posts/',
 		    json: true
 		}, function (error, response, body) {
 
 		    if (!error && response.statusCode === 200) {
-		        console.log(body) // Print the json response
+		        // console.log(body) // Print the json response
 		        res.send(body)
 		    }
 		});

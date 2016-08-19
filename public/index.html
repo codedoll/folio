@@ -285,27 +285,26 @@
     </section>
     <section id="blog">
         <div class="container">
-            <div>
-                <h1 class="sectiontitle bgblack personal twoem">Blog</h1>
-                <h5 class="blogurl">Powered by Node.js. Visit the blog at <a href="http://codedoll.com">codedoll.com.</a></h5>
-            </div>
-            <!-- RECENT POSTS -->
-            <div class="col-lg-4 col-md-4 col-sm-4 post_item_block" ng-repeat="posts in mctrl.posts | limitTo: 6">
-                <a href="{{posts.url}}">
-                    <h3><span ng-bind-html="posts.title"></span></h3></a>
-                <div class="post_item">
-                    <div class="post_item_img">
-                        <img class="blogimg" alt=" " src="{{posts.thumbnail}}">
-                        <a class="link" href="http://codedoll.com/unit-3-project-week/"></a>
-                    </div>
-                    <div class="post_item_content">
-                        <div class="blog_content">
-                            <span> <em>{{posts.date | amDateFormat: 'MMMM Do YYYY, h:mm a' }}</em> </span>
-                            <span ng-bind-html="posts.excerpt"></span>
+            <h1 class="sectiontitle bgblack personal twoem">Blog</h1>
+            <h5 class="blogurl">Powered by Node.js. Visit the blog at <a href="http://codedoll.com">codedoll.com.</a></h5>
+            <ul class="blogpost-container blogpost-wrap">
+                <li class="blogpost" ng-repeat="posts in mctrl.posts | limitTo: 6">
+                    <a href="{{posts.url}}">
+                        <h3><span ng-bind-html="posts.title"></span></h3></a>
+                    <div class="post_item">
+                        <div class="post_item_img">
+                            <img class="blogimg" alt=" " src="{{posts.thumbnail}}">
+                            <a class="link" href="http://codedoll.com/unit-3-project-week/"></a>
+                        </div>
+                        <div class="post_item_content">
+                            <div class="blog_content">
+                                <span> <em>{{posts.date | amDateFormat: 'MMMM Do YYYY, h:mm a' }}</em> </span>
+                                <span ng-bind-html="posts.excerpt"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
         <!-- //CONTAINER -->
     </section>
