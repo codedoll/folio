@@ -44,7 +44,6 @@ a,
 input,
 select,
 textarea {
-    vertical-align: top;
     outline: none !important;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
